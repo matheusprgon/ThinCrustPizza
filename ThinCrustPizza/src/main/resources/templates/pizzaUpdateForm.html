@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+
+
+    <title>ThinCrustPizza</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">ThinCrustPizza</span>
+    </nav>
+
+</header>
+
+<section>
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item" aria-current="page"><a href="/pizzas">Pizzas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Atualizar Pizza</li>
+            </ol>
+        </nav>
+
+
+        <th:block layout:fragment="content">
+            <div class="col-md-12">
+                <form th:action="@{/pizzas/{id}(id=${pizza.id})}" th:object="${pizza}" th:method="put">
+                    <input type="hidden" th:field="*{id}" />
+                    <div class="form-group col-sm-4">
+                        <input type="text" name="sabor" th:field="*{sabor}" placeholder="Sabor *" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+
+        </th:block>
+<!--            <div>-->
+<!--                <form th:action="@{/pizzaUpdate}" th:object="${pizza}" method="put">-->
+<!--                    <input type="hidden" name="_method" value="PUT"/>-->
+<!--                    <input type="text" name="sabor" placeholder="Sabor *" th:value="${pizza.sabor}">-->
+<!--                    <input type="text" name="tamanho" placeholder="Tamanho *" th:value="${pizza.tamanho}">-->
+<!--                    <input type="text" name="ingredientes" placeholder="Ingredientes *" th:value="${pizza.ingredientes}">-->
+<!--                    <button type="submit">Atualizar</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    </div>
+</section>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Ingredientes *',
+        tabsize: 2,
+        height: 300
+    });
+</script>
+
+</body>
+
+</html>

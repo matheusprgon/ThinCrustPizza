@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="pizzas.css">
+
+  <title>ThinCrustPizza</title>
+
+  <!--CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <!-- <link href="pizzas.css" rel="stylesheet"> -->
+
+</head>
+
+<body class="bg-warning p-2" style="--bs-bg-opacity: .3;">
+
+  <header>
+
+    <!-- As a link -->
+    <nav class="navbar bg-warning" style="--bs-bg-opacity: .3;">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="home">ThinCrustPizza</a>
+      </div>
+
+
+    </nav>
+
+  </header>
+
+
+
+  <section>
+
+
+    <div class="container" style="width: 50%; padding-bottom: 30px;">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="--bs-bg-opacity: .4; padding-left: 0px;">
+          <li class="breadcrumb-item active" aria-current="page">Cardápio</li>
+        </ol>
+      </nav>
+
+<!--              &lt;!&ndash; <img src="https://s2.glbimg.com/wMQRG2vmN_dDJ-1HrSwGOKEbZak=/0x0:1080x608/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2021/e/n/G9IuruRaezxqgmwozOyg/capa-materia-gshow-49-.png" class="bg-image img-fluid" alt=""-->
+<!--                   style="background-image: https://s2.glbimg.com/wMQRG2vmN_dDJ-1HrSwGOKEbZak=/0x0:1080x608/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2021/e/n/G9IuruRaezxqgmwozOyg/capa-materia-gshow-49-.png"> &ndash;&gt;-->
+
+
+
+      <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="pizza : ${pizzas}">
+
+        <div class="card-body">
+          <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+<!--            <span th:text="${pizza.sabor}"></span>-->
+            <span th:text="${pizza.tamanho}"></span>
+          </p>
+
+          <a th:href="${(#mvc.url('PC#getPizzaDetails').arg(0, pizza.id)).build()}">
+            <h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;">
+              <span th:text="${pizza.sabor}"></span>
+            </h4>
+          </a>
+
+          <p class="card-text"></p>
+
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>
