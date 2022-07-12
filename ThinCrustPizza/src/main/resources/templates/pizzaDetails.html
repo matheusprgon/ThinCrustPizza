@@ -21,15 +21,16 @@
         <span class="navbar-brand mb-0 h1" style="font-weight: bold;">ThinCrustPizza</span>
     </nav>
 
-    <nav class="gap-2 navbar navbar-light mx-auto justify-content-center">
-        <a href="/newpizza" class="btn btn-primary" style="width: 150px; max-height;" role="button">Novo Sabor</a>
+    <nav class="gap-2 navbar navbar-light mx-auto justify-content-center" style="max-height;">
+        <a href="/newpizza" class="btn btn-primary" role="button">Novo Sabor</a>
 
-        <form action="" th:method="put">
-            <input type="submit" class="btn btn-secundary" style="background-color: grey" href="/pizza/{id}" value="Atualizar" />
-        </form>
         <form action="" th:method="delete">
             <input type="submit" class="btn btn-danger" href="/pizza/{id}" value="Deletar" />
         </form>
+<!--        <form action="" th:method="put">-->
+<!--            <input type="submit" class="btn btn-secundary" href="/pizza/{id}" value="Atualizar" />-->
+<!--            <a th:href="@{'/edit/'+${pizza.id}}" class="btn btn-secondary" role="button">Editar</a>-->
+<!--        </form>-->
 
     </nav>
 

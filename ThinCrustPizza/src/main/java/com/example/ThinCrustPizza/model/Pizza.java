@@ -23,11 +23,6 @@ public class Pizza {
     @NotBlank
     private String ingredientes;
 
-//    private double valor;
-
-
-    //colocar ingredientes
-
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate data;
 
@@ -54,14 +49,6 @@ public class Pizza {
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
-
-//    public double getValor() {
-//        return valor;
-//    }
-//
-//    public void setValor(double valor) {
-//        this.valor = valor;
-//    }
 
     public String getIngredientes() {
         return ingredientes;

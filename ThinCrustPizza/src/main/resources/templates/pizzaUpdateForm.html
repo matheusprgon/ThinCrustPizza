@@ -34,8 +34,8 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-                <li class="breadcrumb-item" aria-current="page"><a href="/pizzas">Pizzas</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Atualizar Pizza</li>
+                <li class="breadcrumb-item" aria-current="page"><a href="/pizzas">Cardápio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar Pizza</li>
             </ol>
         </nav>
 
@@ -44,11 +44,13 @@
             <div class="col-md-12">
                 <form th:action="@{/pizzas/{id}(id=${pizza.id})}" th:object="${pizza}" th:method="put">
                     <input type="hidden" th:field="*{id}" />
-                    <div class="form-group col-sm-4">
+                    <div class="form-group col-md-12">
                         <input type="text" name="sabor" th:field="*{sabor}" placeholder="Sabor *" class="form-control"/>
+                        <input type="text" name="tamanho" th:field="*{tamanho}" placeholder="Tamanho *" class="form-control"/>
+                        <input type="text" name="ingredientes" th:field="*{ingredientes}" placeholder="Ingredientes *" class="form-control"/>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </form>
             </div>
