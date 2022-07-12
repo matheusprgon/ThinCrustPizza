@@ -14,14 +14,14 @@
 
 </head>
 
-<body class="bg-warning p-2" style="--bs-bg-opacity: .3;">
+<body class="bg-warning p-2" style="--bs-bg-opacity: .5; background-image: url('https://bolichelitoralplaza.com.br/wp-content/uploads/2017/01/pizza-site-or.jpg'); height: 100vh">
 
   <header>
 
     <!-- As a link -->
-    <nav class="navbar bg-warning" style="--bs-bg-opacity: .3;">
+    <nav class="navbar bg-warning rounded" style="--bs-bg-opacity: .5;">
       <div class="container-fluid justify-content-center">
-        <a class="navbar-brand" href="home">ThinCrustPizza</a>
+        <a class="navbar-brand mb-0 h1" style="font-weight: bold;" href="home">ThinCrustPizza</a>
       </div>
 
 
@@ -47,7 +47,7 @@
 
 
 
-      <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="pizza : ${pizzas}">
+      <div class="card shadow-sm bg-light rounded" style="margin-top: 20px; --bs-bg-opacity: .8;" th:each="pizza : ${pizzas}">
 
         <div class="card-body">
           <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">

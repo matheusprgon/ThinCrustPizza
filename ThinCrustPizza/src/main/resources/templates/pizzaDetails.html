@@ -13,12 +13,12 @@
 
 </head>
 
-<body class="d-grid gap-2 d-md-block bg-warning p-2" style="--bs-bg-opacity: .3;">
+<body class="d-grid gap-2 d-md-block bg-warning p-2" style="--bs-bg-opacity: .5; background-image: url('https://bolichelitoralplaza.com.br/wp-content/uploads/2017/01/pizza-site-or.jpg'); height: 100vh">
 
-<header class="bg-warning p-2" style="--bs-bg-opacity: .3;">
+<header class="bg-warning p-2 rounded" style="--bs-bg-opacity: .5;">
 
-    <nav class="navbar navbar-light mx-auto justify-content-center">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">ThinCrustPizza</span>
+    <nav class="navbar navbar-light mx-auto justify-content-center" href="home">
+        <span class="navbar-brand mb-0 h1" style="font-weight: bold;" href="home">ThinCrustPizza</span>
     </nav>
 
     <nav class="gap-2 navbar navbar-light mx-auto justify-content-center" style="max-height;">
@@ -46,7 +46,7 @@
             </ol>
         </nav>
 
-        <article>
+        <article class="container bg-light rounded" style="margin-top: 20px; --bs-bg-opacity: .8;">
             <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${pizza.sabor}"></span></h1>
             <p class="card-subtitle mb-2 text-muted">
                 <i class="material-icons">local_pizza</i>
